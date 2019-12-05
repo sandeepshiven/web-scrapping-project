@@ -9,6 +9,7 @@ with open("quote_data.csv","w") as file:
     csv_writer.writerow(["QUOTE","AUTHOR",'author_link'])
     while(True):
         response = requests.get(url+str(page_no))
+        print("Scrapping data from:",url+str(page_no),"........")
 
         soup = BeautifulSoup(response.text, "html.parser")
         quotes = soup.find_all(class_="quote")
